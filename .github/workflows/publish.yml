@@ -25,12 +25,12 @@ jobs:
       - name: Verify tag matches version
         run: |
           VERSION=$(python - <<'PY'
-import re, pathlib
-text = pathlib.Path('simplepasswordguard/__init__.py').read_text(encoding='utf-8')
-m = re.search(r"__version__\s*=\s*['\"]([^'\"]+)['\"]", text)
-assert m, "__version__ not found"
-print(m.group(1))
-PY
+          import re, pathlib
+          text = pathlib.Path('simplepasswordguard/__init__.py').read_text(encoding='utf-8')
+          m = re.search(r"__version__\s*=\s*['\"]([^'\"]+)['\"]", text)
+          assert m, "__version__ not found"
+          print(m.group(1))
+          PY
           )
           echo "Package version: $VERSION"
           echo "Git tag: ${GITHUB_REF_NAME}"
