@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simplepasswordguard"
+dynamic = ["version"]
+description = "Simple password generator package"
+readme = "README.md"
+authors = [{name="Fazliddin"}]
+license = "MIT"
+requires-python = ">=3.8"
+dependencies = []
+keywords = ["password", "generator", "security"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security :: Cryptography",
+  "Topic :: Software Development :: Libraries",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Gan5510/SimplePasswordGuard"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+include = ["simplepasswordguard"]
+exclude = ["tests*", "docs*", "examples*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "simplepasswordguard.__version__"}
